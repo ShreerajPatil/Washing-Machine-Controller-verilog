@@ -40,16 +40,57 @@ The testbench drives a 50 MHz clock (20 ns period) and steps the FSM through a c
 - Compound transition logic between DRAIN, RINSE, and SPIN
 - Emergency stop overrides the cycle from any active state
 
-## How to Run
+## How to Use the Code
 
-Simulate using any Verilog simulator (e.g. Icarus Verilog):
+The files in this repository are provided as templates. To use them in your own projects, you will need to rename the modules to match your file names.
 
-```bash
-iverilog -o wm_tb code.v test.v
-vvp wm_tb
+#### Design Code
+
+This is the Verilog code .
 ```
+module Code(
+ input  wire clk, 
+  input  wire rst_n,     // System Clock Input 
+  input  wire start,     // User command to start the wash cycle 
+  input  wire stop,
+```
+**To Use This Code:**
+*   Replace `Code` with the name of your Verilog file (e.g., `washing_machine_controller`).
 
-This generates a `wm_tb.vcd` waveform file, viewable in GTKWave.
+---
+
+#### Testbench Code
+
+This is the testbench used to verify the design code.
+```
+module test ; 
+ 
+  // DUT inputs 
+  reg  clk; 
+  reg  rst_n;         // ACTIVE-HIGH async reset (1 = reset) - name kept as rst_n for 
+compatibility 
+  reg  stop; 
+  reg  t_soak; 
+  reg  t_wash; 
+  reg  t_drain; 
+  reg  t_rinse; 
+  reg  t_spin; 
+ 
+  // DUT outputs 
+  wire idle; 
+  wire soak; 
+  wire wash; 
+  wire drain; 
+  wire rinse; 
+  wire spin; 
+ 
+  // Instantiate DUT 
+  code dut ( 
+    .clk   (clk), 
+```
+**To Use This Testbench:**
+1.  Replace `test` with the name of your testbench file (e.g., `testbench`).
+2.  On the line `Code dut( clk   (clk)`, replace `Code` with the module name from your design file (e.g., `washing_machine_controller`). This connects the testbench to your gate.
 
 ## Future Enhancements
 
