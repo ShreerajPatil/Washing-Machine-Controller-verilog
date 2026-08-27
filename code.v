@@ -1,3 +1,5 @@
+**Code**
+```
 module code( 
   input  wire clk, 
   input  wire rst_n,     // System Clock Input 
@@ -143,3 +145,4 @@ reset" (`if (rst_n)`).
   end 
  
 endmodule
+```
