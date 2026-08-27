@@ -33,7 +33,7 @@ Any non-IDLE state transitions immediately to IDLE if `stop` is asserted.
 
 The testbench drives a 50 MHz clock (20 ns period) and steps the FSM through a complete wash cycle, then verifies the emergency stop path.
 
-![Simulation Waveform](images/waveform.png)
+![Simulation Waveform](Images/Testbench.png)
 
 **Verified behavior:**
 - Full sequential cycle: IDLE → SOAK → WASH → DRAIN → RINSE → SPIN → IDLE
