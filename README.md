@@ -21,7 +21,7 @@ Any non-IDLE state transitions immediately to IDLE if `stop` is asserted.
 
 ## State Diagram
 
-![FSM State Diagram](images/state-diagram.png)
+![FSM State Diagram](Images/Blockdiagram.png)
 
 ## Files
 
