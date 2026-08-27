@@ -27,7 +27,7 @@ Any non-IDLE state transitions immediately to IDLE if `stop` is asserted.
 
 - `Code.md` — FSM controller module (state register + next-state/output logic)
 - `Testbench.md` — Verilog testbench simulating a full wash cycle and emergency stop
-- `images/` — State diagram and simulation waveform
+- `Images/` — State diagram and simulation waveform
 
 ## Simulation
 
